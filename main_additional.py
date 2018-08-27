@@ -93,11 +93,7 @@ class CommonUtils:
     @staticmethod
     def calculate_determinant(vertex):
         rows = vertex.get_size().get_rows()
-        #TODO
-        print(rows)
         cols = vertex.get_size().get_columns()
-        #TODO
-        print(cols)
         result = float(1.0)
         vertex1 = Vertex()
         vertex1.set_size(rows, cols)
@@ -160,8 +156,6 @@ class CommonUtils:
                     '''
 
         for i in range(0, rows):
-            #TODO
-            print("RESULT: " + str(result))
             result = result * vertex1.get_item(i, i)
 
         return result
@@ -212,32 +206,32 @@ def main():
 
         dict_map.update({row_index: vertex_second})
 
-        dict_map.update({2: vertex_second})
-        sum = 0
+    dict_map.update({2: vertex_second})
+    sum = 0
 
-        for val in linked_list:
-            sum = sum + int(val)
+    for val in linked_list:
+        sum = sum + int(val)
 
-        print('\nMap size: ' + str(len(dict_map)))
+    print('\nMap size: ' + str(len(dict_map)))
 
-        for key, value in dict_map.items():
-            if value is not None:
-                sum = sum + int(key)
+    for key, value in dict_map.items():
+        if value is not None:
+            sum = sum + int(key)
 
-        vertex_first = CommonUtils.multiply(vertex_first, vertex_second)
-        vertex_first = CommonUtils.revert(vertex_first)
-        value = vertex_first.get_determinant(vertex_first)
-        first_item = vertex_map.get(vertex_first)
-        second_item = vertex_map.get(vertex_second)
-        if first_item is None:
-            sum = sum + 1
+    vertex_first = CommonUtils.multiply(vertex_first, vertex_second)
+    vertex_first = CommonUtils.revert(vertex_first)
+    value = vertex_first.get_determinant(vertex_first)
+    first_item = vertex_map.get(vertex_first)
+    second_item = vertex_map.get(vertex_second)
+    if first_item is None:
+        sum = sum + 1
 
-        if second_item is None:
-            sum = sum - 1
+    if second_item is None:
+        sum = sum - 1
 
-        print('value: ' + str(value))
-        print('sum: ' + str(sum))
-        print('VertexMap size: ' + str(len(vertex_map)))
+    print('value: ' + str(value))
+    print('sum: ' + str(sum))
+    print('VertexMap size: ' + str(len(vertex_map)))
 
 
 if __name__ == "__main__": main()
